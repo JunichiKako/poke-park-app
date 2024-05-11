@@ -1,9 +1,9 @@
 export interface Pokemon {
     id: number;
-    species: {
-        name: string;
-    };
-    sprites: {
-        front_default: string;
-    };
+    name: string;
+    imageURL: string;
+    location:
+        | { lat: number; lng: number }
+        | { lat: number; lng: number }[]
+        | undefined;
 }

@@ -1,3 +1,5 @@
+"use client"
+
 import { Pokemon } from "@/types/pokemon";
 import Image from "next/image";
 
@@ -21,13 +23,13 @@ const SecltedPokemon = ({ pokemons }: SelectedPokemonProps) => {
                             className="rounded-lg shadow-md p-4 relative hover:bg-gray-100 hover:text-black cursor-pointer transition duration-300 ease-in-out"
                         >
                             <Image
-                                src={pokemon.sprites.front_default}
-                                alt={pokemon.species.name}
+                                src={pokemon.imageURL}
+                                alt={pokemon.name}
                                 width={120}
                                 height={120}
                             />
                             <h2 className="text-xl font-semibold">
-                                {pokemon.species.name}
+                                {pokemon.name}
                             </h2>
                             <p>#{pokemon.id}</p>
                         </div>

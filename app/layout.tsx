@@ -4,8 +4,8 @@ import "./globals.css";
 import "./custom.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "next-themes";
-import Header from "./components/header";
-import Footer from "./components/footer";
+import Header from "../components/header";
+import Footer from "../components/footer";
 
 const DotGothic = DotGothic16({ subsets: ["latin"], weight: "400" });
 

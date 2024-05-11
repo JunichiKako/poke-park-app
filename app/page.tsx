@@ -8,7 +8,7 @@ export default async function Home() {
     return (
         <div className="container mt-10 flex gap-4 h-full">
             <SecltedPokemon pokemons={pokemons} />
-            <PokemonPark />
+            <PokemonPark pokemons={pokemons} />
         </div>
     );
 }
