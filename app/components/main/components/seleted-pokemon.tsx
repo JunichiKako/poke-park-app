@@ -5,9 +5,13 @@ import Image from "next/image";
 
 interface SelectedPokemonProps {
     pokemons: Pokemon[];
+    setSelectedPokemon: (id: number) => void;
 }
 
-export default function SecltedPokemon({ pokemons }: SelectedPokemonProps) {
+export default function SeletedPokemon({
+    pokemons,
+    setSelectedPokemon,
+}: SelectedPokemonProps) {
     return (
         <div className="flex-1 overflow-y-auto hidden-scrollbar">
             <h2>ポケモンを選んでね。</h2>
@@ -17,6 +21,7 @@ export default function SecltedPokemon({ pokemons }: SelectedPokemonProps) {
                         <div
                             key={pokemon.id}
                             className="rounded-lg shadow-md p-4 relative hover:bg-gray-100 hover:text-black cursor-pointer transition duration-300 ease-in-out"
+                            onClick={() => setSelectedPokemon(pokemon.id)}
                         >
                             <Image
                                 src={pokemon.imageURL}
