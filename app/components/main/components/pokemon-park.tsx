@@ -14,7 +14,7 @@ type PokemonParkProps = {
 
 export default function PokemonPark({ pokemons }: PokemonParkProps) {
     return (
-        <div className="flex-1">
+        <div className="flex-1 mb-6">
             <APIProvider
                 apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string}
             >

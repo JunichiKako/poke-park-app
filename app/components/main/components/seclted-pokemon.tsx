@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { Pokemon } from "@/types/pokemon";
 import Image from "next/image";
@@ -7,11 +7,7 @@ interface SelectedPokemonProps {
     pokemons: Pokemon[];
 }
 
-// hover時をおしゃれにしたい。
-// パラレルルートの実装する？
-// ダークモード時のカード borderとかを変えたい。
-
-const SecltedPokemon = ({ pokemons }: SelectedPokemonProps) => {
+export default function SecltedPokemon({ pokemons }: SelectedPokemonProps) {
     return (
         <div className="flex-1 overflow-y-auto hidden-scrollbar">
             <h2>ポケモンを選んでね。</h2>
@@ -38,6 +34,4 @@ const SecltedPokemon = ({ pokemons }: SelectedPokemonProps) => {
             </div>
         </div>
     );
-};
-
-export default SecltedPokemon;
+}

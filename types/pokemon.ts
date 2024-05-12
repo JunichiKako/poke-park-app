@@ -1,4 +1,4 @@
-export interface Pokemon {
+export type Pokemon = {
     id: number;
     name: string;
     imageURL: string;
@@ -6,4 +6,4 @@ export interface Pokemon {
         | { lat: number; lng: number }
         | { lat: number; lng: number }[]
         | undefined;
-}
+};
