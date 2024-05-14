@@ -18,7 +18,7 @@ export default function PokemonSelect({ pokemons }: { pokemons: Pokemon[] }) {
               className="rounded-lg shadow-md p-4 relative hover:bg-gray-100 hover:text-black cursor-pointer transition duration-300 ease-in-out"
               onClick={() => {
                 console.log("Selected Pokemon", pokemon);
-                
+
                 if (pokemon.location) {
                   setSelectedPokemon({
                     location: pokemon.location,

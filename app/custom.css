@@ -1,7 +1,6 @@
-
 /* スクロールバーを消すCSS */
 
 .hidden-scrollbar {
-    overflow: scroll;
-    scrollbar-width: none;
+  overflow: scroll;
+  scrollbar-width: none;
 }

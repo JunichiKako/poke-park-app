@@ -10,29 +10,29 @@ import Footer from "../components/footer";
 const DotGothic = DotGothic16({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
-    title: "POKEMON PARKS",
-    description: "ポケモン公園をまとめたサイトです。",
+  title: "POKEMON PARKS",
+  description: "ポケモン公園をまとめたサイトです。",
 };
 
 export default function RootLayout({
-    children,
+  children,
 }: Readonly<{
-    children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-    return (
-        <html lang="ja">
-            <body className={cn(DotGothic.className, "h-dvh flex flex-col")}>
-                <ThemeProvider
-                    attribute="class"
-                    defaultTheme="system"
-                    enableSystem
-                    disableTransitionOnChange
-                >
-                    <Header />
-                    {children}
-                    <Footer />
-                </ThemeProvider>
-            </body>
-        </html>
-    );
+  return (
+    <html lang="ja">
+      <body className={cn(DotGothic.className, "h-dvh flex flex-col")}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+          {children}
+          <Footer />
+        </ThemeProvider>
+      </body>
+    </html>
+  );
 }
