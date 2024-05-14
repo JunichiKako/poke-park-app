@@ -4,18 +4,17 @@ import { Pokemon } from "@/types/pokemon";
 import { APIProvider, AdvancedMarker, Map, Pin } from "@vis.gl/react-google-maps";
 import Image from "next/image";
 import { useMapData } from "../map-provider";
-import { RefObject, useEffect, useRef, useState } from "react";
-
 
 export default function PokemonPark({ pokemons }: { pokemons: Pokemon[] }) {
-  const { setMap } = useMapData();
-  const mapRef = useRef<google.maps.Map | null>(null);
+  const { selectedPokemon } = useMapData();
 
-  useEffect(() => {
-    if (mapRef.current) {
-      setMap(mapRef.current);
+  const getCenter = () => {
+    if (Array.isArray(selectedPokemon.location)) {
+      return selectedPokemon.location[0];
+    } else {
+      return selectedPokemon.location;
     }
-  }, []);
+  };
 
   return (
     <div className="flex-1 mb-6">
@@ -30,7 +29,8 @@ export default function PokemonPark({ pokemons }: { pokemons: Pokemon[] }) {
           gestureHandling={"greedy"}
           disableDefaultUI
           mapId={"f7865720b0868f38"}
-          ref={mapRef as RefObject<Map>}
+          center={getCenter() as { lat: number; lng: number } | null}
+          zoom={selectedPokemon.location ? 8 : 5}
         >
           {pokemons.map((pokemon) => {
             if (Array.isArray(pokemon.location)) {
