@@ -1,9 +1,9 @@
 export type Pokemon = {
-    id: number;
+    id: string;
     name: string;
     imageURL: string;
-    location:
+    location?:
         | { lat: number; lng: number }
         | { lat: number; lng: number }[]
-        | undefined;
+        | null
 };

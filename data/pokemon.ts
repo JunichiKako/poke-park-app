@@ -1,7 +1,7 @@
 // 日本語化を何となくで出来たので、詳細を知りたい
 // 全部取得する必要があるのか、必要なポケモンだけでいいのかを考える
 
-import { parkPokemos } from "./filter-pokemon";
+import { parkPokemos } from "./park-pokemons";
 
 export const getAllPokemons = async () => {
     const parkPokemonIds = parkPokemos.map((pokemon) => pokemon.id);
