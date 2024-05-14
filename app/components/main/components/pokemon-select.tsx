@@ -21,7 +21,6 @@ export default function PokemonSelect({ pokemons }: { pokemons: Pokemon[] }) {
                 
                 if (pokemon.location) {
                   setSelectedPokemon({
-                    id: pokemon.id,
                     location: pokemon.location,
                   });
                 }

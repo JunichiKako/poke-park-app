@@ -6,13 +6,9 @@ type PokemonLocation = { lat: number; lng: number };
 
 type ContextType = {
   selectedPokemon: {
-    id: string | null;
-    location: PokemonLocation | PokemonLocation[] | null 
+    location: PokemonLocation | PokemonLocation[] | null;
   };
-  setSelectedPokemon: (pokemon: {
-    id: string | null;
-    location: PokemonLocation | PokemonLocation[] | null 
-  }) => void;
+  setSelectedPokemon: (pokemon: { location: PokemonLocation | PokemonLocation[] | null }) => void;
   // map: google.maps.Map | null;
   // setMap: (map: google.maps.Map) => void;
 };
@@ -21,9 +17,8 @@ const Context = createContext<ContextType>({} as ContextType);
 
 export function MapDataProvider({ children }: { children: ReactNode }) {
   const [selectedPokemon, setSelectedPokemon] = useState<{
-    id: string | null;
     location: PokemonLocation | PokemonLocation[] | null;
-  }>({ id: null, location: null });
+  }>({ location: null });
 
   // const [map, setMap] = useState<google.maps.Map | null>(null);
 
